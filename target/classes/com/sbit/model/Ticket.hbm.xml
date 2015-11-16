@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.Ticket" table="ticket" catalog="sbit">
+        <id name="idticket" type="Integer">
+            <column name="idticket" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estadoTicket" class="com.sbit.model.EstadoTicket" fetch="select">
+            <column name="estado" length="7" />
+        </many-to-one>
+        <many-to-one name="usuarioByIdCliente" class="com.sbit.model.Usuario" fetch="select">
+            <column name="id_cliente" />
+        </many-to-one>
+        <many-to-one name="usuarioByIdOperador" class="com.sbit.model.Usuario" fetch="select">
+            <column name="id_operador" />
+        </many-to-one>
+        <property name="fechaCreacion" type="timestamp">
+            <column name="fecha_creacion" length="19" />
+        </property>
+        <property name="fechaCierre" type="timestamp">
+            <column name="fecha_cierre" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

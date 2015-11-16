@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.Usuario" table="usuario" catalog="sbit">
+        <id name="idUsuario" type="Integer">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tipoUsuario" class="com.sbit.model.TipoUsuario" fetch="select">
+            <column name="tipo" length="20" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="45" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <set name="ticketsForIdCliente" table="ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cliente" />
+            </key>
+            <one-to-many class="com.sbit.model.Ticket" />
+        </set>
+        <set name="ticketsForIdOperador" table="ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_operador" />
+            </key>
+            <one-to-many class="com.sbit.model.Ticket" />
+        </set>
+    </class>
+</hibernate-mapping>

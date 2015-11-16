@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.Mensaje" table="mensaje" catalog="sbit">
+        <id name="idmensaje" type="Integer">
+            <column name="idmensaje" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estadoMensaje" class="com.sbit.model.EstadoMensaje" fetch="select">
+            <column name="estado" length="20" />
+        </many-to-one>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="200" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

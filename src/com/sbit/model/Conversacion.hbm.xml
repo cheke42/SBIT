@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.Conversacion" table="conversacion" catalog="sbit">
+        <id name="idconversacion" type="Integer">
+            <column name="idconversacion" />
+            <generator class="assigned" />
+        </id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.Empresa" table="empresa" catalog="sbit">
+        <id name="idEmpresa" type="Integer">
+            <column name="id_empresa" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="condicionIva" class="com.sbit.model.CondicionIva" fetch="select">
+            <column name="condicion_iva" length="25" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="35" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="domicilio" length="70" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="45" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="45" />
+        </property>
+        <property name="cuit" type="string">
+            <column name="cuit" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

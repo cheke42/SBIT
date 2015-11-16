@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.CondicionIva" table="condicion_iva" catalog="sbit">
+        <id name="condicionIva" type="string">
+            <column name="condicion_iva" length="25" />
+            <generator class="assigned" />
+        </id>
+        <set name="empresas" table="empresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="condicion_iva" length="25" />
+            </key>
+            <one-to-many class="com.sbit.model.Empresa" />
+        </set>
+    </class>
+</hibernate-mapping>

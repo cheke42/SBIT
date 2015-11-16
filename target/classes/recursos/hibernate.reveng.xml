@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<type-mapping>
+	<sql-type jdbc-type="INTEGER" hibernate-type="Integer"
+		not-null="true">
+	</sql-type>
+	<sql-type jdbc-type="TIMESTAMP" hibernate-type="timestamp"
+		length="19" not-null="false">
+	</sql-type>
+</type-mapping>
+
+<table-filter match-catalog="sbit" match-name="condicion_iva"/>
+  <table-filter match-catalog="sbit" match-name="conversacion"/>
+  <table-filter match-catalog="sbit" match-name="empresa"/>
+  <table-filter match-catalog="sbit" match-name="estado_mensaje"/>
+  <table-filter match-catalog="sbit" match-name="estado_ticket"/>
+  <table-filter match-catalog="sbit" match-name="mensaje"/>
+  <table-filter match-catalog="sbit" match-name="problema"/>
+  <table-filter match-catalog="sbit" match-name="ticket"/>
+  <table-filter match-catalog="sbit" match-name="tipo_usuario"/>
+  <table-filter match-catalog="sbit" match-name="usuario"/>
+</hibernate-reverse-engineering>

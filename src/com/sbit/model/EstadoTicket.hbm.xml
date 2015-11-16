@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/11/2015 12:05:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sbit.model.EstadoTicket" table="estado_ticket" catalog="sbit">
+        <id name="estado" type="string">
+            <column name="estado" length="7" />
+            <generator class="assigned" />
+        </id>
+        <set name="tickets" table="ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="estado" length="7" />
+            </key>
+            <one-to-many class="com.sbit.model.Ticket" />
+        </set>
+    </class>
+</hibernate-mapping>
